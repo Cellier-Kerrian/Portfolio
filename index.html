@@ -1,399 +1,291 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerrian Cellier - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kerrian Cellier — Portfolio</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --fg:#0a0a0a;
+    --muted:#6e6e6e;
+    --line:#e6e6e6;
+  }
+  *{box-sizing:
+    border-box
+  }
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+  }
+  h1, h2, h3 {
+    text-align: center;
+  }
+  .container{
+    max-width:960px;
+    margin:0 auto;
+    padding:28px
+  }
+  .header{
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+  .profile-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f2f2f2;
+    margin-bottom: 12px;
+  }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+  .subtitle{
+    margin: 4px 0 0;
+    color: var(--muted);
+  }
 
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+  .brand{
+    display:flex;
+    gap:16px;
+    align-items:center
+  }
+  .brand img{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#f2f2f2
+  }
+  .brand h1{
+    font-size:28px;
+    margin:0
+  }
+  .brand p{
+    margin:4px 0 0;
+    color:var(--muted)
+  }
+  .section{
+    margin-top:34px;
+    padding-top:14px;
+    border-top:1px solid var(--line)
+  }
+  .section h2{
+    font-size:18px;
+    margin:0 0 16px;
+    text-transform:uppercase;
+    letter-spacing:.06em
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px
+  }
+  @media(min-width:760px){
+    .grid{
+      grid-template-columns:repeat(2,1fr)
+    }
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px
+  }
+  .list{
+    display:grid;
+    gap:10px
+  }
+  .row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px
+  }
+  .k{
+    color:var(--muted)
+  }
+  .badges{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap
+  }
+  .badge{
+    border:1px solid var(--fg);
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:13px
+  }
+  .media{
+    display:flex;
+    gap:14px;
+    align-items:center
+  }
+  .media img{
+    width:56px;
+    height:56px;
+    object-fit:contain;
+    filter:grayscale(100%)
+  }
+  a.btn{
+    display:inline-block;
+    background:var(--fg);
+    color:#fff;
+    text-decoration:none;
+    padding:10px 14px;
+    border-radius:10px
+  }
+  .small{
+    font-size:14px;
+    color:var(--muted)
+  }
+  footer{
+    margin:36px 0 8px;
+    color:var(--muted);
+    font-size:13px;
+    text-align:center
+  }
+  #parcours .card .card {
+    margin-bottom: 16px;
+  }
 
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 48px;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #555;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #764ba2;
-            border-radius: 2px;
-        }
-
-        .experience-item, .education-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .experience-title, .education-title {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1em;
-        }
-
-        .experience-company, .education-school {
-            color: #667eea;
-            font-weight: 600;
-        }
-
-        .experience-date, .education-date {
-            color: #888;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .experience-description {
-            margin-top: 10px;
-            color: #555;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-category {
-            background: rgba(118, 75, 162, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #764ba2;
-        }
-
-        .skill-category h3 {
-            color: #764ba2;
-            margin-bottom: 10px;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 3px 0;
-            color: #555;
-        }
-
-        .skill-list li::before {
-            content: '▸ ';
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .languages {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .language-item {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
-        }
-
-        .interests {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .interest-item {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: #667eea;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .interest-item:hover {
-            background: #667eea;
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .languages, .interests {
-                justify-content: center;
-            }
-        }
-
-        .formation-list {
-            margin-top: 10px;
-        }
-
-        .formation-list li {
-            color: #555;
-            margin-left: 20px;
-            margin-bottom: 5px;
-        }
-    </style>
+  #contact .card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="profile-pic">KC</div>
-            <h1>KERRIAN CELLIER</h1>
-            <p class="subtitle">Étudiant en 2ème année Informatique - Université Paris Cité</p>
-            <p style="color: #666; margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Étudiant sérieux et volontaire, souhaitant acquérir de nouvelle expérience dans le monde du travail et financer mes études.
-            </p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📱</span>
-                    <span>07 82 67 72 34</span>
-                </div>
-                <div class="contact-item">
-                    <span>📧</span>
-                    <span>kerrian.cellier@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>4 Rue des Tilleuls, 77500 CHELLES</span>
-                </div>
-                <div class="contact-item">
-                    <span>🎂</span>
-                    <span>2003 (21 ans)</span>
-                </div>
-            </div>
-        </header>
+<div class="container">
+  <header class="header">
+    <img src="assets/profile.png" class="profile-img">
+    <h1>Kerrian CELLIER</h1>
+    <p class="subtitle">Étudiant en informatique • L3</p>
+  </header>
 
-        <div class="main-content">
-            <section class="section">
-                <h2>🎓 Formation</h2>
-                <div class="education-item">
-                    <div class="education-title">Informatique</div>
-                    <div class="education-school">Université Paris Cité - Paris, 13ème</div>
-                    <div class="education-date">En cours - Juin 2026</div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-title">Baccalauréat - NSI & Mathématiques</div>
-                    <div class="education-school">Lycée Polyvalent Les Pannevelles - Provins, 77</div>
-                    <div class="education-date">Juin 2022</div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-title">Brevet des collèges</div>
-                    <div class="education-school">Collège Les Tournelles - Villiers-Saint-Georges, 77</div>
-                    <div class="education-date">Juin 2018</div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>💼 Expériences Professionnelles</h2>
-                <div class="experience-item">
-                    <div class="experience-title">Emploi Saisonnier</div>
-                    <div class="experience-company">Disney Land Paris - Les Chariots Gourmands</div>
-                    <div class="experience-date">Juin 2023 - Septembre 2023, Chessy</div>
-                    <div class="experience-description">
-                        <strong>Formations obtenues :</strong>
-                        <ul class="formation-list">
-                            <li>Formation HACCP / Hygiène Niveau I</li>
-                            <li>Formation caisse</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-title">Stage d'observation volontaire de Terminal</div>
-                    <div class="experience-company">Holydis</div>
-                    <div class="experience-date">Février 2022, Colombes</div>
-                </div>
-                
-                <div class="experience-item">
-                    <div class="experience-title">Stage d'observation de 3ème</div>
-                    <div class="experience-company">Nestlé France</div>
-                    <div class="experience-date">Décembre 2017, Noisiel</div>
-                </div>
-            </section>
-
-            <section class="section full-width">
-                <h2>💻 Compétences Techniques</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Langages de Programmation</h3>
-                        <ul class="skill-list">
-                            <li>Python (NSI - Lycée & OpenClassRoom)</li>
-                            <li>Java (Niveau L2 - Faculté)</li>
-                            <li>C (Niveau L2 - Faculté & OpenClassRoom)</li>
-                            <li>PHP (Niveau L1 - Faculté & OpenClassRoom)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Technologies Web</h3>
-                        <ul class="skill-list">
-                            <li>HTML (Niveau L1 - Faculté & OpenClassRoom)</li>
-                            <li>CSS (Niveau L1 - Faculté)</li>
-                            <li>SQL (Niveau L2 - Faculté)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Outils & Bureautique</h3>
-                        <ul class="skill-list">
-                            <li>Pack Office365 (Word, Excel, PowerPoint, Access)</li>
-                            <li>CSV (Niveau OpenClassRoom)</li>
-                            <li>LaTeX / KaTeX (Niveau OpenClassRoom)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>🌍 Langues</h2>
-                <div class="languages">
-                    <div class="language-item">
-                        <strong>Français</strong><br>
-                        Expérimenté (C2)
-                    </div>
-                    <div class="language-item">
-                        <strong>Anglais</strong><br>
-                        Intermédiaire avancé (B2)
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>🎯 Centres d'Intérêt</h2>
-                <div class="interests">
-                    <span class="interest-item">🎵 Musique</span>
-                    <span class="interest-item">🎮 Jeux Vidéo</span>
-                    <span class="interest-item">🎭 Théâtre</span>
-                    <span class="interest-item">🎬 Cinéma</span>
-                    <span class="interest-item">💻 Programmation</span>
-                </div>
-            </section>
-        </div>
+  <section id="contact" class="section">
+    <h2>Contacte</h2>
+    <div class="card">
+      <div class="list">
+        <div class="row"><span class="k">Âge</span><span>2003 (22 ans)</span></div>
+        <div class="row"><span class="k">Téléphone</span><a href="tel:+33782677234">+33 7 82 67 72 34</a></div>
+        <div class="row"><span class="k">Email</span><a href="mailto:kerrian.cellier@gmail.com">kerrian.cellier@gmail.com</a></div>
+        <div class="row"><span class="k">Ville</span><span>Chelles, France</span></div>
+      </div>
     </div>
+  </section>
+
+  <section id="parcours" class="section">
+    <h2>Parcours</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <h3>Parcours Scolaire</h3>
+        <div class="card">
+          <div class="media">
+            <img src="assets/upc-logo.png">
+            <div>
+              <div><b>Université Paris Cité</b></div>
+              <div class="small">Licence Informatique Fondamentale • L3</div>
+              <div class="small"><a href="https://www.informatique.univ-paris-diderot.fr/" target="_blank">Site Officiel</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Lycée polyvalent les Pannevelles</b></div>
+              <div class="small">Bac options:  NSI, Mathématiques • Bac obtenu 2022</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Collège Les Tournelles</b></div>
+              <div class="small">Brevet obtenu 2018</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Parcours Professionnel</h3>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Emploi saisonnier — Disneyland Paris</b></div>
+              <div class="small">Juillet 2025 – Août 2025 • Chessy</div>
+              <div class="small">Les Chariots Gourmands</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Emploi saisonnier — Disneyland Paris</b></div>
+              <div class="small">Juin 2023 – Sept. 2023 • Chessy</div>
+              <div class="small">Les Chariots Gourmands</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Stage d'observation — Holydis</b></div>
+              <div class="small">Fév. 2022 • Colombes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media">
+            <div>
+              <div><b>Stage d'observation — Nestlé France</b></div>
+              <div class="small">Déc. 2017 • Noisiel</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Compétences</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">Java</span>
+          <span class="badge">PHP</span>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">C</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Office 365</span>
+          <span class="badge">Excel</span>
+          <span class="badge">LaTeX</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="badges">
+          <span class="badge">Informatique</span>
+          <span class="badge">Musique</span>
+          <span class="badge">Cinéma</span>
+          <span class="badge">Jeux vidéo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© Kerrian Cellier</footer>
+</div>
 </body>
 </html>
