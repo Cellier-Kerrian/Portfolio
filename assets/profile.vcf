@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Cellier;Kerrian;;;
+FN:Kerrian Cellier
+TEL;TYPE=CELL:+33 7 82 67 72 34
+EMAIL:kerrian.cellier@gmail.com
+ORG:Université Paris Cité (Diderot)
+TITLE:Étudiant (L3 - Informatique)
+ADR;TYPE=HOME:;; ;Chelles;Seine-et-Marne;77500;France
+URL:https://cellier-kerrian.github.io/Portfolio/
+BDAY:2003
+END:VCARD
