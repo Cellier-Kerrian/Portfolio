@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kerrian Cellier – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1115;--card:#161925;--muted:#8a90a6;--text:#e6e8ef;--accent:#5b8cff;--chip:#202538}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0d12, #121524 40%, #0b0d12);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.container{max-width:980px;margin:0 auto;padding:32px}
+.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+@media(min-width:840px){.hero{grid-template-columns:1.2fr .8fr}}
+.card{background:var(--card);border:1px solid #1f2333;border-radius:20px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.h1{font-size:36px;line-height:1.15;margin:0 0 8px}
+.subtitle{margin:0 0 18px;color:var(--muted)}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600}
+.btn.secondary{background:#242a40;border:1px solid #2f3755;color:#e6e8ef}
+.section{margin-top:28px;display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:840px){.section{grid-template-columns:1fr 1fr}}
+.section h2{margin:0;font-size:20px}
+.list{display:grid;gap:12px}
+.item{background:var(--card);border:1px solid #1f2333;border-radius:16px;padding:16px}
+.item h3{margin:0 0 6px;font-size:16px}
+.item .meta{color:var(--muted);font-size:14px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--chip);border:1px solid #2a2f45;color:#c8cde2;padding:6px 10px;border-radius:999px;font-size:13px}
+.grid-3{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:760px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.footer{margin-top:26px;color:var(--muted);font-size:14px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kv div{background:var(--card);border:1px solid #1f2333;border-radius:12px;padding:12px}
+.kv b{display:block;color:#cfd5ee;margin-bottom:6px}
+.header-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.small{font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="card">
+      <h1 class="h1">Kerrian Cellier</h1>
+      <p class="subtitle">Étudiant en informatique (L2). Sérieux et volontaire. Souhaite acquérir de l'expérience et financer mes études.</p>
+      <div class="kv">
+        <div><b>Âge</b><span>21 ans</span></div>
+        <div><b>Ville</b><span>Chelles, France</span></div>
+        <div><b>Téléphone</b><span><a href="tel:+33782677234">+33 7 82 67 72 34</a></span></div>
+        <div><b>Email</b><span><a href="mailto:kerrian.cellier@gmail.com">kerrian.cellier@gmail.com</a></span></div>
+      </div>
+      <div class="header-links">
+        <a class="btn" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AN%3ACellier%3BKerrian%3B%3B%3B%0D%0AFN%3AKerrian%20Cellier%0D%0ATEL%3BTYPE%3DCELL%3A%2B33782677234%0D%0AEMAIL%3Akerrian.cellier%40gmail.com%0D%0AADR%3BTYPE%3DHOME%3A%3B%3B4%20Rue%20des%20Tilleuls%3BChelles%3B%3B77500%3BFrance%0D%0ANOTE%3A%C3%82ge%3A%2021%3B%20Comp%C3%A9tences%3A%20Office365%2C%20Python%2C%20Java%2C%20PHP%2C%20HTML%2C%20CSS%2C%20C%2C%20SQL%2C%20CSV%2C%20LaTeX%2FKaTeX.%20Description%3A%20%C3%89tudiant%20en%202e%20ann%C3%A9e%20d'informatique%2C%20s%C3%A9rieux%20et%20volontaire.%20Cherche%20%C3%A0%20acqu%C3%A9rir%20de%20l'exp%C3%A9rience%20et%20financer%20mes%20%C3%A9tudes.%0D%0AEND%3AVCARD" download="Kerrian_Cellier.vcf">Télécharger mes coordonnées (.vcf)</a>
+        <a class="btn secondary" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Compétences</h2>
+      <div class="chips">
+        <span class="chip">Office 365</span>
+        <span class="chip">Word</span>
+        <span class="chip">Excel</span>
+        <span class="chip">PowerPoint</span>
+        <span class="chip">Access</span>
+        <span class="chip">Python</span>
+        <span class="chip">Java</span>
+        <span class="chip">PHP</span>
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">C</span>
+        <span class="chip">SQL</span>
+        <span class="chip">CSV</span>
+        <span class="chip">LaTeX/KaTeX</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="list">
+      <h2>Expériences</h2>
+      <div class="item">
+        <h3>Emploi saisonnier – Disneyland Paris</h3>
+        <div class="meta">Juin 2023 – Sept. 2023 • Chessy • Les Chariots Gourmands</div>
+        <div class="small">Formations: HACCP/Hygiène Niv I, Caisse</div>
+      </div>
+      <div class="item">
+        <h3>Stage d'observation – Holydis</h3>
+        <div class="meta">Fév. 2022 • Colombes</div>
+      </div>
+      <div class="item">
+        <h3>Stage d'observation – Nestlé France</h3>
+        <div class="meta">Déc. 2017 • Noisiel</div>
+      </div>
+    </div>
+    <div class="list">
+      <h2>Formations</h2>
+      <div class="item">
+        <h3>Université Paris Cité – Informatique</h3>
+        <div class="meta">L2 • Paris 13e • Diplôme prévu Juin 2026</div>
+      </div>
+      <div class="item">
+        <h3>Lycée Polyvalent Les Pannevelles</h3>
+        <div class="meta">NSI, Mathématiques • Juin 2022 • Provins</div>
+      </div>
+      <div class="item">
+        <h3>Collège Les Tournelles</h3>
+        <div class="meta">Juin 2018 • Villiers-Saint-Georges</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="list">
+      <h2>Langues</h2>
+      <div class="grid-3">
+        <div class="item"><h3>Français</h3><div class="meta">C2</div></div>
+        <div class="item"><h3>Anglais</h3><div class="meta">B2</div></div>
+      </div>
+    </div>
+    <div id="contact" class="list">
+      <h2>Contact</h2>
+      <div class="item">
+        <div class="kv">
+          <div><b>Téléphone</b><a href="tel:+33782677234">+33 7 82 67 72 34</a></div>
+          <div><b>Email</b><a href="mailto:kerrian.cellier@gmail.com">kerrian.cellier@gmail.com</a></div>
+          <div><b>Adresse</b>4 Rue des Tilleuls, 77500 Chelles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer">Actualise cette page dans ton dépôt GitHub et active GitHub Pages pour la publier.</p>
+</div>
+</body>
+</html>
