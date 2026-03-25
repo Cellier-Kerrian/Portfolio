@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mes Projets — Kerrian Cellier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-menu" id="navMenu">
+        <div class="nav-content">
+            <a href="index.html">CV</a>
+            <a href="projet.html" class="active">Projet</a>
+        </div>
+    </nav>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="container" style="margin-top: 100px; text-align: center;">
+        <h1>Mes Projets</h1>
+        <p class="muted">Cette page est actuellement vide. Revenez plus tard !</p>
+    </div>
+
+    
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            menuOverlay.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
