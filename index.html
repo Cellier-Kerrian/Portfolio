@@ -1,294 +1,326 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kerrian Cellier — Portfolio</title>
-<style>
-  :root{
-    --bg:#ffffff;
-    --fg:#0a0a0a;
-    --muted:#6e6e6e;
-    --line:#e6e6e6;
-  }
-  *{box-sizing:
-    border-box
-  }
-  html,body{
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    color:var(--fg);
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
-  }
-  h1, h2, h3 {
-    text-align: center;
-  }
-  .container{
-    max-width:960px;
-    margin:0 auto;
-    padding:28px
-  }
-  .header{
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .profile-img{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #f2f2f2;
-    margin-bottom: 12px;
-  }
-  .subtitle{
-    margin: 4px 0 0;
-    color: var(--muted);
-  }
-  .brand{
-    display:flex;
-    gap:16px;
-    align-items:center
-  }
-  .brand img{
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    object-fit:cover;
-    background:#f2f2f2
-  }
-  .brand h1{
-    font-size:28px;
-    margin:0
-  }
-  .brand p{
-    margin:4px 0 0;
-    color:var(--muted)
-  }
-  .section{
-    margin-top:34px;
-    padding-top:14px;
-    border-top:1px solid var(--line)
-  }
-  .section h2{
-    font-size:18px;
-    margin:0 0 16px;
-    text-transform:uppercase;
-    letter-spacing:.06em
-  }
-  .grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:16px
-  }
-  @media(min-width:760px){
-    .grid{
-      grid-template-columns:repeat(2,1fr)
-    }
-  }
-  .card{
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:16px
-  }
-  .card .btn {
-    display: block;
-    margin: 16px auto 0 auto;
-    text-align: center;
-    width: fit-content;
-  }
-  .list{
-    display:grid;
-    gap:10px
-  }
-  .row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px
-  }
-  .k{
-    color:var(--muted)
-  }
-  .badges{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap
-  }
-  .badge{
-    border:1px solid var(--fg);
-    padding:6px 10px;
-    border-radius:999px;
-    font-size:13px
-  }
-  .media{
-    display:flex;
-    gap:14px;
-    align-items:center
-  }
-  .media img{
-    width:56px;
-    height:56px;
-    object-fit:contain;
-    filter:grayscale(100%)
-  }
-  a.btn{
-    display:inline-block;
-    background:var(--fg);
-    color:#fff;
-    text-decoration:none;
-    padding:10px 14px;
-    border-radius:10px
-  }
-  .small{
-    font-size:14px;
-    color:var(--muted)
-  }
-  footer{
-    margin:36px 0 8px;
-    color:var(--muted);
-    font-size:13px;
-    text-align:center
-  }
-  #parcours .card .card {
-    margin-bottom: 16px;
-  }
-  #contact .card {
-    max-width: 400px;
-    margin: 0 auto;
-}
-</style>
-</head>
+  <html lang="fr">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Kerrian Cellier — Portfolio</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-<div class="container">
-  <header class="header">
-    <img src="assets/profile.png" class="profile-img">
-    <h1>Kerrian CELLIER</h1>
-    <p class="subtitle">Étudiant en informatique • L3</p>
-  </header>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="card">
-      <div class="list">
-        <div class="row"><span class="k">Âge</span><span>2003 (22 ans)</span></div>
-        <div class="row"><span class="k">Téléphone</span><a href="tel:+33782677234">+33 7 82 67 72 34</a></div>
-        <div class="row"><span class="k">Email</span><a href="mailto:kerrian.cellier@gmail.com">kerrian.cellier@gmail.com</a></div>
-        <div class="row"><span class="k">Ville</span><span>Chelles, France</span></div>
-      </div>
-      <a class="btn" href="assets/Kerrian_Cellier.vcf" download="Kerrian_Cellier.vcf">Télécharger mes coordonnées</a>
-    </div>
-  </section>
+  <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-  <section id="parcours" class="section">
-    <h2>Parcours</h2>
-    <div class="grid">
+    <nav class="nav-menu" id="navMenu">
+        <div class="nav-content">
+            <a href="index.html" class="active">CV</a>
+            <a href="projet.html">Projet</a>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="container">
+      <header class="header">
+        <img src="assets/profile.png" class="profile-img">
+        <h1>Kerrian CELLIER</h1>
+        <p class="subtitle">Étudiant en informatique • L3</p>
+      </header>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="card">
+          <div class="list">
+            <div class="row"><span class="k">Âge</span><span>2003 (22 ans)</span></div>
+            <div class="row"><span class="k">Téléphone</span><a href="tel:+33782677234">+33 7 82 67 72 34</a></div>
+            <div class="row"><span class="k">Email</span><a href="mailto:kerrian.cellier@gmail.com">kerrian.cellier@gmail.com</a></div>
+            <div class="row"><span class="k">Ville</span><span>Chelles, France</span></div>
+          </div>
+          <a class="btn" href="assets/Kerrian_Cellier.vcf" download="Kerrian_Cellier.vcf">Télécharger mes coordonnées</a>
+        </div>
+      </section>
+
+      <section id="parcours" class="section">
+        <h2>Formations</h2>
+        <div class="list" style="text-align: left; width: 100%; max-width: 400px; margin: 0 auto;">
+          
+          <div class="card">
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Juin 2026 - Licence Informatique Fondamentale</b></div>
+                  <div class="small">Université Paris Cité - Paris 13ème</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>2025 - HACCP / Hygiène Niv1</b></div>
+                  <div class="small">Disney Land Paris - Chessy (77)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>2025 - Caisse</b></div>
+                  <div class="small">Disney Land Paris - Chessy (77)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>2025 - VHP</b></div>
+                  <div class="small">Disney Land Paris - Chessy (77)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>2022 - BAC Général</b></div>
+                  <div class="small">Lycée Polyvalent Les Pannevelles – Provins (77)</div>
+                  <div class="small">Options : Numérique Sciences Informatiques (NSI) et Mathématiques</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>2018 - Brevet des Collèges</b></div>
+                  <div class="small">Collège Les Tournelles – Villiers-Saint-Georges (77)</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="parcours" class="section">
+        <h2>Parcours</h2>
+        <div class="grid">
+          
+          <div class="card">
+            <h3>Parcours Scolaire</h3>
+            <div class="card">
+              <div class="media">
+                <img src="assets/upc-logo.png">
+                <div>
+                  <div><b>Université Paris Cité</b></div>
+                  <div class="small">Licence Informatique Fondamentale • L3</div>
+                  <div class="small">Septembre 2022 à ce jour</div>
+                  <div class="small"><a href="https://www.informatique.univ-paris-diderot.fr/" target="_blank">Site Officiel</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Lycée polyvalent les Pannevelles</b></div>
+                  <div class="small">Septembre 2018 à Juin 2022</div>
+                  <div class="small">Bac Général obtenu en 2022</div>
+                  <div class="small">Options:  NSI, Mathématiques</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Collège Les Tournelles</b></div>
+                  <div class="small">Septembre 2013 à Juin 2018</div>
+                  <div class="small">Brevet obtenu en 2018</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Parcours Professionnel</h3>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Emploi saisonnier — Disneyland Paris</b></div>
+                  <div class="small">Juillet 2025 – Sept. 2025 • Chessy</div>
+                  <div class="small">Les Chariots Gourmands</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Emploi saisonnier — Disneyland Paris</b></div>
+                  <div class="small">Juin 2023 – Sept. 2023 • Chessy</div>
+                  <div class="small">Les Chariots Gourmands</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Stage d'observation — Holydis</b></div>
+                  <div class="small">Fév. 2022 • Colombes</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="media">
+                <div>
+                  <div><b>Stage d'observation — Nestlé France</b></div>
+                  <div class="small">Déc. 2017 • Noisiel</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
       
-      <div class="card">
-        <h3>Parcours Scolaire</h3>
-        <div class="card">
-          <div class="media">
-            <img src="assets/upc-logo.png">
-            <div>
-              <div><b>Université Paris Cité</b></div>
-              <div class="small">Licence Informatique Fondamentale • L3</div>
-              <div class="small"><a href="https://www.informatique.univ-paris-diderot.fr/" target="_blank">Site Officiel</a></div>
+      <section id="parcours" class="section">
+        <h2>Languages</h2>
+        <div class="list">
+          
+          <div class="card">
+          <h3>Langages Parlés</h3> <div class="card">
+            <div class="list">
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">
+                <b>Anglais</b>
+                <span class="level">Niveau B2</span>
+              </span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">
+                <b>Français</b>
+                <span class="level">Langue maternelle</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Languages Informatiques Connus</h3>
+
+            <div class="card">
+              <div class="badges">
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Python</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Java</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">C</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">PHP</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">HTML</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">CSS</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">JavaScrypt</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">SQL</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Microsoft Office 365</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">LaTeX / KaTeX</span>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Lycée polyvalent les Pannevelles</b></div>
-              <div class="small">Bac options:  NSI, Mathématiques • Bac obtenu 2022</div>
+      <section id="parcours" class="section">
+        <div class="grid">
+          
+          <div class="card">
+            <h3>Centres d'Interet</h3>
+            <div class="card">
+              <div class="badges">
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Musique</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Jeux Vidéo</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Théâtre</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Cinéma</span>
+              <span class="badge" style="text-align: center; width: 100%; max-width: 350px; margin: 0 auto;">Programmation</span>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Compétences</h3>
+
+            <div class="card">
+              <div class="badges">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Organisé</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 80%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Sérieux</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 80%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Déterminé</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 80%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Observateur</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 60%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Impliqué</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 70%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span>Force de proposition</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="--fill: 70%;"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Collège Les Tournelles</b></div>
-              <div class="small">Brevet obtenu 2018</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Parcours Professionnel</h3>
-
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Emploi saisonnier — Disneyland Paris</b></div>
-              <div class="small">Juillet 2025 – Sept. 2025 • Chessy</div>
-              <div class="small">Les Chariots Gourmands</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Emploi saisonnier — Disneyland Paris</b></div>
-              <div class="small">Juin 2023 – Sept. 2023 • Chessy</div>
-              <div class="small">Les Chariots Gourmands</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Stage d'observation — Holydis</b></div>
-              <div class="small">Fév. 2022 • Colombes</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="media">
-            <div>
-              <div><b>Stage d'observation — Nestlé France</b></div>
-              <div class="small">Déc. 2017 • Noisiel</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      <footer>© Kerrian Cellier</footer>
     </div>
-  </section>
 
-  <section id="skills" class="section">
-    <h2>Compétences</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="badges">
-          <span class="badge">Python</span>
-          <span class="badge">Java</span>
-          <span class="badge">PHP</span>
-          <span class="badge">HTML</span>
-          <span class="badge">CSS</span>
-          <span class="badge">C</span>
-          <span class="badge">SQL</span>
-          <span class="badge">Microsoft Office 365</span>
-          <span class="badge">LaTeX</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="badges">
-          <span class="badge">Informatique</span>
-          <span class="badge">Musique</span>
-          <span class="badge">Cinéma</span>
-          <span class="badge">Jeux vidéo</span>
-          <span class="badge">Théâtre</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>© Kerrian Cellier</footer>
-</div>
-</body>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            menuOverlay.classList.toggle('open');
+        });
+    </script>
+    
+  </body>
 </html>
